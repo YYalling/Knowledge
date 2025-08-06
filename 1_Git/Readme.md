@@ -1,4 +1,4 @@
-# 正常使用
+# 1. 正常使用
 1. 建立信息
    * git config --global user.email **email**
    * git config --global user.name **name**
@@ -14,7 +14,7 @@
 6. 推送远程仓库
     * git push origin master
 
-# 命令
+# 2. 命令
 
 ## 创建选择分支
 * git branch **name** :创建一个分支
@@ -40,3 +40,14 @@
     * git branch dev： 创建一个dev分支
     * git checkout dev：切换到dev分支
     * git pull origin dev ：把远程存储仓库中的dev分支更新到现在的dev分支中，此时就是我们正在开发的代码啦
+
+# 3. 处理问题
+查看超过100M的文件及位置:
+```bash
+git rev-list --objects --all | \
+  git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | \
+  grep '^blob' | \
+  awk '$3 > 100000000' | \
+  sort -k3 -n
+```
+

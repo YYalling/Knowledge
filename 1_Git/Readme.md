@@ -13,6 +13,7 @@
     * git remote add origin **URL**
 6. 推送远程仓库
     * git push origin master
+    * git push -u origin master:**设置默认git push/pull的地址**
 
 # 2. 命令
 
@@ -40,6 +41,7 @@
     * git branch dev： 创建一个dev分支
     * git checkout dev：切换到dev分支
     * git pull origin dev ：把远程存储仓库中的dev分支更新到现在的dev分支中，此时就是我们正在开发的代码啦
+* git remote -v：查看绑定的远程代码库
 
 # 3. 处理问题
 查看超过100M的文件及位置:
